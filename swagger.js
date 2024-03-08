@@ -6,7 +6,7 @@ const doc = {
     description: 'API to access member information related to themselves and their families',
     version: '1.0.1'
   },
-  host: 'agbwebdev-proj2.onrender.com',
+  host: 'cse341proj3.onrender.com',
   //host: 'localhost:8080',
   schemes: ['https']
 };
