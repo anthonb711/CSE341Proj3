@@ -83,25 +83,25 @@
               "type": "object",
               "properties": {
                 "lname": {
-                  "example": "<string>"
+                  "example": "any"
                 },
                 "fname": {
-                  "example": "<string>"
+                  "example": "any"
                 },
                 "gender": {
-                  "example": "<'M' or 'F'>"
+                  "example": "any"
                 },
                 "age": {
-                  "example": "<int>"
+                  "example": "any"
                 },
                 "active": {
-                  "example": "<'Y' or 'N'>"
+                  "example": "any"
                 },
                 "lastPrayer": {
-                  "example": "<date>"
+                  "example": "any"
                 },
                 "lastTalk": {
-                  "example": "<date>"
+                  "example": "any"
                 }
               }
             }
@@ -178,25 +178,25 @@
               "type": "object",
               "properties": {
                 "lname": {
-                  "example": "<string>"
+                  "example": "any"
                 },
                 "fname": {
-                  "example": "<string>"
+                  "example": "any"
                 },
                 "gender": {
-                  "example": "<'M' or 'F'>"
+                  "example": "any"
                 },
                 "age": {
-                  "example": "<int>"
+                  "example": "any"
                 },
                 "active": {
-                  "example": "<'Y' or 'N'>"
+                  "example": "any"
                 },
                 "lastPrayer": {
-                  "example": "<date>"
+                  "example": "any"
                 },
                 "lastTalk": {
-                  "example": "<date>"
+                  "example": "any"
                 }
               }
             }
@@ -295,22 +295,22 @@
               "type": "object",
               "properties": {
                 "headHousehold": {
-                  "example": "<string>"
+                  "example": "any"
                 },
                 "spouse": {
-                  "example": "<string>"
+                  "example": "any"
                 },
                 "children": {
-                  "example": "['<string>', '<string>', ....]"
+                  "example": "any"
                 },
                 "marriageDate": {
-                  "example": "<date>"
+                  "example": "any"
                 },
                 "sealingDate": {
-                  "example": "<date>"
+                  "example": "any"
                 },
                 "temple": {
-                  "example": "enmun [<temple name string no comma>]"
+                  "example": "any"
                 }
               }
             }
@@ -387,22 +387,22 @@
               "type": "object",
               "properties": {
                 "headHousehold": {
-                  "example": "<string>"
+                  "example": "any"
                 },
                 "spouse": {
-                  "example": "<string>"
+                  "example": "any"
                 },
                 "children": {
-                  "example": "['<string>', '<string>', ....]"
+                  "example": "any"
                 },
                 "marriageDate": {
-                  "example": "<date>"
+                  "example": "any"
                 },
                 "sealingDate": {
-                  "example": "<date>"
+                  "example": "any"
                 },
                 "temple": {
-                  "example": "enmun [<temple name string no comma>]"
+                  "example": "any"
                 }
               }
             }
@@ -494,16 +494,16 @@
               "type": "object",
               "properties": {
                 "MRN": {
-                  "example": "<Number>"
+                  "example": "any"
                 },
                 "name": {
-                  "example": "<enum[<string ordinance name>]>"
+                  "example": "any"
                 },
                 "performedBy": {
-                  "example": "<string>"
+                  "example": "any"
                 },
                 "date": {
-                  "example": "<date>"
+                  "example": "any"
                 }
               }
             }
@@ -580,16 +580,16 @@
               "type": "object",
               "properties": {
                 "MRN": {
-                  "example": "<Number>"
+                  "example": "any"
                 },
                 "name": {
-                  "example": "<enum[<string ordinance name>]>"
+                  "example": "any"
                 },
                 "performedBy": {
-                  "example": "<string>"
+                  "example": "any"
                 },
                 "date": {
-                  "example": "<date>"
+                  "example": "any"
                 }
               }
             }
