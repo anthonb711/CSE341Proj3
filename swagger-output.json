@@ -1,0 +1,656 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "MEMBERS API",
+    "description": "API to access member information related to themselves and their families",
+    "version": "1.0.1"
+  },
+  "host": "agbwebdev-proj2.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "description": "",
+        "produces": [
+          "text/html"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/profile/": {
+      "get": {
+        "tags": [
+          "Profile"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/members/": {
+      "get": {
+        "tags": [
+          "Members"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Members"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "lname": {
+                  "example": "<string>"
+                },
+                "fname": {
+                  "example": "<string>"
+                },
+                "gender": {
+                  "example": "<'M' or 'F'>"
+                },
+                "age": {
+                  "example": "<int>"
+                },
+                "active": {
+                  "example": "<'Y' or 'N'>"
+                },
+                "lastPrayer": {
+                  "example": "<date>"
+                },
+                "lastTalk": {
+                  "example": "<date>"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/members/{id}": {
+      "get": {
+        "tags": [
+          "Members"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Members"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "lname": {
+                  "example": "<string>"
+                },
+                "fname": {
+                  "example": "<string>"
+                },
+                "gender": {
+                  "example": "<'M' or 'F'>"
+                },
+                "age": {
+                  "example": "<int>"
+                },
+                "active": {
+                  "example": "<'Y' or 'N'>"
+                },
+                "lastPrayer": {
+                  "example": "<date>"
+                },
+                "lastTalk": {
+                  "example": "<date>"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Members"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/family/": {
+      "get": {
+        "tags": [
+          "Families"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Families"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "headHousehold": {
+                  "example": "<string>"
+                },
+                "spouse": {
+                  "example": "<string>"
+                },
+                "children": {
+                  "example": "['<string>', '<string>', ....]"
+                },
+                "marriageDate": {
+                  "example": "<date>"
+                },
+                "sealingDate": {
+                  "example": "<date>"
+                },
+                "temple": {
+                  "example": "enmun [<temple name string no comma>]"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/family/{id}": {
+      "get": {
+        "tags": [
+          "Families"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Families"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "headHousehold": {
+                  "example": "<string>"
+                },
+                "spouse": {
+                  "example": "<string>"
+                },
+                "children": {
+                  "example": "['<string>', '<string>', ....]"
+                },
+                "marriageDate": {
+                  "example": "<date>"
+                },
+                "sealingDate": {
+                  "example": "<date>"
+                },
+                "temple": {
+                  "example": "enmun [<temple name string no comma>]"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Families"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/ordinance/": {
+      "get": {
+        "tags": [
+          "Ordinances"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "tags": [
+          "Ordinances"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "MRN": {
+                  "example": "<Number>"
+                },
+                "name": {
+                  "example": "<enum[<string ordinance name>]>"
+                },
+                "performedBy": {
+                  "example": "<string>"
+                },
+                "date": {
+                  "example": "<date>"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/ordinance/{id}": {
+      "get": {
+        "tags": [
+          "Ordinances"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Ordinances"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "MRN": {
+                  "example": "<Number>"
+                },
+                "name": {
+                  "example": "<enum[<string ordinance name>]>"
+                },
+                "performedBy": {
+                  "example": "<string>"
+                },
+                "date": {
+                  "example": "<date>"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Ordinances"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
