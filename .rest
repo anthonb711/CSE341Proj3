@@ -13,3 +13,6 @@ GET http://localhost:8080/user_skills HTTP/1.1
 
 ### SKILLS
 GET http://localhost:8080/skills HTTP/1.1
+
+### AVAILABILITIES
+GET http://localhost:8080/availabilities HTTP/1.1
