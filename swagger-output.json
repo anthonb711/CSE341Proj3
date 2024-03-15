@@ -7,19 +7,13 @@
   },
   "host": "cse341proj3.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
     "/": {
       "get": {
-        "tags": [
-          "Home"
-        ],
+        "tags": ["Home"],
         "description": "",
-        "produces": [
-          "text/html"
-        ],
+        "produces": ["text/html"],
         "responses": {
           "200": {
             "description": "OK"
@@ -29,9 +23,7 @@
     },
     "/profile/": {
       "get": {
-        "tags": [
-          "Profile"
-        ],
+        "tags": ["Profile"],
         "description": "",
         "responses": {
           "200": {
@@ -40,21 +32,21 @@
         },
         "security": [
           {
-            "OAuth2": [
-              "read"
-            ]
+            "OAuth2": ["read"]
           }
         ]
       }
     },
-    "/userProfile/": {
+    "/user_profile/": {
       "get": {
+        "tags": ["User Profile"],
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
           }
-        }
+        },
+        "security": []
       }
     }
   }
