@@ -7,5 +7,4 @@ routes.use(auth(config));
 
 routes.get('/', controller.getHome);
 
-
 module.exports = routes;
