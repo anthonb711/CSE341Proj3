@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const connectDB = require('./config/connectDB');
+const connectDB = require('./config/db/connectDB');
 const swaggerUI = require('swagger-ui-express');
 const swaggerDoc = require('./swagger-output.json');
 const port = process.env.PORT || 3000;
