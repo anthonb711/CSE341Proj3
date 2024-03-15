@@ -12,5 +12,6 @@ routes.use('/user_skills', /*requiresAuth(),*/ require('./user_skills'));
 routes.use('/skills', /*requiresAuth(),*/ require('./skills'));
 routes.use('/availabilities', /*requiresAuth(),*/ require('./availabilities'));
 routes.use('/sessions', /*requiresAuth(),*/ require('./sessions'));
+routes.use('/feedback', /*requiresAuth(),*/ require('./feedback'));
 
 module.exports = routes;
