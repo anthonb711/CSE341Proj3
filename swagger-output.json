@@ -96,6 +96,18 @@
         },
         "security": []
       }
+    },
+    "/feedback/": {
+      "get": {
+        "tags": ["User Profile"],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": []
+      }
     }
   }
 }

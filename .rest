@@ -19,3 +19,6 @@ GET http://localhost:8080/availabilities HTTP/1.1
 
 ### SESSIONS
 GET http://localhost:8080/sessions HTTP/1.1
+
+### FEEDBACK
+GET http://localhost:8080/feedback HTTP/1.1
