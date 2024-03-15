@@ -1,4 +1,4 @@
-const getSkills = (req, res) => {
+const getSessions = (req, res) => {
   // #swagger.tags = ['User Profile']
   /* #swagger.security = [{
             "OAuth2": [
@@ -6,7 +6,7 @@ const getSkills = (req, res) => {
                 'write'
             ]
     }] */
-  res.send('Hello from skills');
+  res.send('Hello from sessions');
 };
 
-module.exports = { getSkills };
+module.exports = { getSessions };

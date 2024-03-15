@@ -11,6 +11,6 @@ routes.use('/user_profile', /*requiresAuth(),*/ require('./user_profile'));
 routes.use('/user_skills', /*requiresAuth(),*/ require('./user_skills'));
 routes.use('/skills', /*requiresAuth(),*/ require('./skills'));
 routes.use('/availabilities', /*requiresAuth(),*/ require('./availabilities'));
+routes.use('/sessions', /*requiresAuth(),*/ require('./sessions'));
 
 module.exports = routes;
-
