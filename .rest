@@ -7,3 +7,6 @@ GET http://localhost:8080/profile HTTP/1.1
 
 ### USER_PROFILE
 GET http://localhost:8080/user_profile HTTP/1.1
+
+### USER_SKILLS
+GET http://localhost:8080/user_skills HTTP/1.1
