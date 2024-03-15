@@ -48,6 +48,54 @@
         },
         "security": []
       }
+    },
+    "/user_skills/": {
+      "get": {
+        "tags": ["User Profile"],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": []
+      }
+    },
+    "/skills/": {
+      "get": {
+        "tags": ["User Profile"],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": []
+      }
+    },
+    "/availabilities/": {
+      "get": {
+        "tags": ["User Profile"],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": []
+      }
+    },
+    "/sessions/": {
+      "get": {
+        "tags": ["User Profile"],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": []
+      }
     }
   }
 }
