@@ -7,10 +7,5 @@ routes.use(auth(config));
 
 routes.get('/', controller.getHome);
 
-routes.use('/profile', requiresAuth(), require('./profile'));
-routes.use('/members', requiresAuth(), require('./members'));
-routes.use('/family', requiresAuth(), require('./family'));
-routes.use('/ordinance', requiresAuth(), require('./ordinance'));
-// routes.use('/calling',   requiresAuth(), require('./calling')  );
 
 module.exports = routes;
