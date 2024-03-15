@@ -16,3 +16,6 @@ GET http://localhost:8080/skills HTTP/1.1
 
 ### AVAILABILITIES
 GET http://localhost:8080/availabilities HTTP/1.1
+
+### SESSIONS
+GET http://localhost:8080/sessions HTTP/1.1
