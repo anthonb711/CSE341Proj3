@@ -1,12 +1,12 @@
 const getProfile = (req, res) => {
-  // #swagger.tags = ['Profile']
+  // #swagger.tags = ['User Profile']
   /* #swagger.security = [{
             "OAuth2": [
                 'read'
+                'write'
             ]
     }] */
-  //res.send(JSON.stringify(req.oidc.user));
-  res.send('Hello from Profile Controller');
+  res.send('Hello from user_profile');
 };
 
 module.exports = { getProfile };

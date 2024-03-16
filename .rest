@@ -1,0 +1,24 @@
+###
+### HOME
+GET http://localhost:8080/ HTTP/1.1
+
+### PROFILE
+GET http://localhost:8080/profile HTTP/1.1
+
+### USER_PROFILE
+GET http://localhost:8080/user_profile HTTP/1.1
+
+### USER_SKILLS
+GET http://localhost:8080/user_skills HTTP/1.1
+
+### SKILLS
+GET http://localhost:8080/skills HTTP/1.1
+
+### AVAILABILITIES
+GET http://localhost:8080/availabilities HTTP/1.1
+
+### SESSIONS
+GET http://localhost:8080/sessions HTTP/1.1
+
+### FEEDBACK
+GET http://localhost:8080/feedback HTTP/1.1

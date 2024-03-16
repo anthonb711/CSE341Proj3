@@ -1,7 +1,7 @@
 const routes = require('express').Router();
-const controller = require('../controllers/profileController');
+const controller = require('../controllers/skillsController');
 const { requiresAuth } = require('express-openid-connect');
 
-routes.get('/', /*requiresAuth(),*/ controller.getProfile);
+routes.get('/', /*requiresAuth(),*/ controller.getSkills);
 
 module.exports = routes;
