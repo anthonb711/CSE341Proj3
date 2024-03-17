@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const userProfileSchema = new mongoose.Schema({
-  userID: { type: Number, required: true },
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
-  teamsID: { type: String, required: true },
+  userID: { type: Number, required: true},
+  firstName: { type: String},
+  lastName: { type: String },
+  teamsID: { type: String},
   email: {
     type: String,
     validate: {
@@ -13,10 +13,13 @@ const userProfileSchema = new mongoose.Schema({
       },
       message: (props) => `${props.value} is not a valide email address`
     },
-    required: [true, 'Valid email required']
+    required: true 
   }
 });
 
+
+
 const UserProfile = mongoose.model('user_profile', userProfileSchema);
+
 
 module.exports = UserProfile;

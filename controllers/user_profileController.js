@@ -1,8 +1,9 @@
 
 const ObjectId = require('mongodb').ObjectId;
-const UserProfile = require('../models/user_profile');
+const { json } = require('body-parser');
+const UserProfile = require('../models/user_profile')
 
-const getProfile = (req, res) => {
+const getProfiles =  async(req, res) => {
   // #swagger.tags = ['User Profile']
   /* #swagger.security = [{
             "OAuth2": [
@@ -10,9 +11,15 @@ const getProfile = (req, res) => {
                 'write'
             ]
     }] */
-  res.send('Hello from user_profile');
+    try {
+    const allProfiles = await UserProfile.find();
+    res.status(200).json(allProfiles);
+    console.log('FROM GET USER_PROFILES');
+  } catch (error) {
+    console.error('Error fetching user profiles:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 };
-
 
 // POSTS
 const addUserProfile = async (req, res) => {
@@ -24,7 +31,9 @@ const addUserProfile = async (req, res) => {
             ]
     }] */
   try {
-    const { userID, firstName, lastName, teamsID, email } = req.body;
+    console.log(req.body);
+  const { userID, firstName, lastName, teamsID, email } = req.body;
+    console.log(`${(req.body.userID)} req.body1`);
     const userProfile = new UserProfile({
       userID,
       firstName,
@@ -34,13 +43,13 @@ const addUserProfile = async (req, res) => {
     });
 
     const insertedUserProfile = await userProfile.save();
-    res.status(201).json(userProfile._id);
+    res.status(201).json(insertedUserProfile._id);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
 module.exports = {
-    getProfile,
+    getProfiles,
     addUserProfile
  };
