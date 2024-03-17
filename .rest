@@ -23,9 +23,26 @@ GET http://localhost:8080/sessions HTTP/1.1
 ### FEEDBACK
 GET http://localhost:8080/feedback HTTP/1.1
 
-***************************************************************************************************
+//***************************************************************************************************//
+
 ### CREATE USER_PROFILE
-POST http://localhost:8080/user_profile HTTP/1. 
+POST http://localhost:8080/user_profile HTTP/1.1
+Content-Type: application/json
+
+{
+  "userID" :"12345",
+  "firstName": "Josh",
+  "lastName": "Brown",
+  "teamsID": "anthonb711@byui.edu",
+  "email" :"anthonb711@icloud.com"
+}
+
+
+
+
+//**************************************RENDER*****************************************************//
+### CREATE USER_PROFILE
+POST https://cse341proj3.onrender.com/ HTTP/1.1
 Content-Type: application/json
 
 {
