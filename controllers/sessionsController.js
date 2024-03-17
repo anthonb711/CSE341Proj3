@@ -1,5 +1,5 @@
 const getSessions = (req, res) => {
-  // #swagger.tags = ['User Profile']
+  // #swagger.tags = ['Sessions']
   /* #swagger.security = [{
             "OAuth2": [
                 'read'

@@ -1,5 +1,5 @@
 const getFeedback = (req, res) => {
-  // #swagger.tags = ['User Profile']
+  // #swagger.tags = ['Feedback']
   /* #swagger.security = [{
             "OAuth2": [
                 'read'
