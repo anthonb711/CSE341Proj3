@@ -1,5 +1,5 @@
 const getAvailabilities = (req, res) => {
-  // #swagger.tags = ['User Profile']
+  // #swagger.tags = ['Availabilities']
   /* #swagger.security = [{
             "OAuth2": [
                 'read'

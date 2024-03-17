@@ -1,5 +1,5 @@
 const getSkills = (req, res) => {
-  // #swagger.tags = ['User Profile']
+  // #swagger.tags = ['Skills']
   /* #swagger.security = [{
             "OAuth2": [
                 'read'
