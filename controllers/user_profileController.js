@@ -1,9 +1,8 @@
-
 const ObjectId = require('mongodb').ObjectId;
 const { json } = require('body-parser');
-const UserProfile = require('../models/user_profile')
+const UserProfile = require('../models/user_profile');
 
-const getProfiles =  async(req, res) => {
+const getProfiles = async (req, res) => {
   // #swagger.tags = ['User Profile']
   /* #swagger.security = [{
             "OAuth2": [
@@ -11,7 +10,7 @@ const getProfiles =  async(req, res) => {
                 'write'
             ]
     }] */
-    try {
+  try {
     const allProfiles = await UserProfile.find();
     res.status(200).json(allProfiles);
     console.log('FROM GET USER_PROFILES');
@@ -32,8 +31,8 @@ const addUserProfile = async (req, res) => {
     }] */
   try {
     console.log(req.body);
-  const { userID, firstName, lastName, teamsID, email } = req.body;
-    console.log(`${(req.body.userID)} req.body1`);
+    const { userID, firstName, lastName, teamsID, email } = req.body;
+    console.log(`${req.body.userID} req.body1`);
     const userProfile = new UserProfile({
       userID,
       firstName,
@@ -50,6 +49,6 @@ const addUserProfile = async (req, res) => {
 };
 
 module.exports = {
-    getProfiles,
-    addUserProfile
- };
+  getProfiles,
+  addUserProfile
+};
