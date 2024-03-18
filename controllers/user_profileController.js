@@ -61,7 +61,7 @@ const getProfileById = async (req, res) => {
   }
   const profileId = new ObjectId(req.params.id);
   try {
-    const thisProfile = await Profile.findById(profileId);
+    const thisProfile = await UserProfile.findById(profileId);
     res.status(200).json(thisProfile);
   } catch (error) {
     console.error('Error fetching profile by ID:');
