@@ -52,7 +52,7 @@ const getProfileById = async (req, res) => {
   // #swagger.tags = ['User Profile']
   /* #swagger.security = [{
             "OAuth2": [
-                'read', 
+                'read',
                 'write'
             ]
     }] */
