@@ -48,7 +48,29 @@ const addUserProfile = async (req, res) => {
   }
 };
 
+const getProfileById = async (req, res) => {
+  // #swagger.tags = ['User Profile']
+  /* #swagger.security = [{
+            "OAuth2": [
+                'read', 
+                'write'
+            ]
+    }] */
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+  const profileId = new ObjectId(req.params.id);
+  try {
+    const thisProfile = await Profile.findById(profileId);
+    res.status(200).json(thisProfile);
+  } catch (error) {
+    console.error('Error fetching profile by ID:');
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
 module.exports = {
   getProfiles,
-  addUserProfile
+  addUserProfile,
+  getProfileById
 };
