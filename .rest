@@ -228,5 +228,4 @@ DELETE http://localhost:8080/availabilities/65f90abaaf8d0eb814b37c0c HTTP/1.1
 DELETE http://localhost:8080/sessions/65f916fa820760e4a562c36a HTTP/1.1
 
 ### DELETE FEEDBACK BY ID
-DELETE http://localhost:8080/feedback/65f916fa820760e4a562c36a HTTP/1.1
-
+DELETE http://localhost:8080/feedback/65f922cd45db9c8f33742401 HTTP/1.1
