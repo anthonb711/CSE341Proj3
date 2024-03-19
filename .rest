@@ -65,6 +65,17 @@ Content-Type: application/json
   "isLearnable" : "y"
 }
 
+### ADD SKILL
+POST http://localhost:8080/skills HTTP/1.1
+Content-Type: application/json
+
+{
+  "skillID" : "2",
+  "skillName": "Knitting",
+  "category": "Crafts",
+  "description": "Weaving/Knitting"
+}
+
 
 //*****************************************************
 //  UPDATE BY ID'S

@@ -410,6 +410,46 @@
             "OAuth2": ["read", "write"]
           }
         ]
+      },
+      "post": {
+        "tags": ["Skills"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "skillID": {
+                  "example": "any"
+                },
+                "skillName": {
+                  "example": "any"
+                },
+                "category": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": ["read", "write"]
+          }
+        ]
       }
     },
     "/availabilities/": {

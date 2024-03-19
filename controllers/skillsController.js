@@ -20,6 +20,25 @@ const getSkills = async (req, res) => {
 /*************************************************************************
  *  ADD SKILL - HTTP:POST
  *************************************************************************/
+const addSkill = async (req, res) => {
+  // #swagger.tags = ['Skills']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  try {
+    const { skillID, skillName, category, description } = req.body;
+    const skill = new Skill({
+      skillID,
+      skillName,
+      category,
+      description
+    });
+
+    const insertedSkill = await skill.save();
+    res.status(201).json(insertedSkill._id);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 
 /*************************************************************************
  *  GET SKILL BY ID - HTTP:GET
@@ -34,8 +53,8 @@ const getSkills = async (req, res) => {
  *************************************************************************/
 
 module.exports = {
-  getSkills //,
-  //addSkill,
+  getSkills,
+  addSkill
   //getSkillById,
   //updateSkill,
   //deleteSkill
