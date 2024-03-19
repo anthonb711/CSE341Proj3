@@ -168,11 +168,11 @@ PUT http://localhost:8080/sessions/65f916fa820760e4a562c36a HTTP/1.1
 Content-Type: application/json
 
 {
-  "sessionID": "2",
-  "tutorID": "3",
-  "learnerID": "3",
-  "skillID": "4",
-  "sessionTime": "2055",
+  "sessionID": "15",
+  "tutorID": "12",
+  "learnerID": "54",
+  "skillID": "6",
+  "sessionTime": "2045",
   "teamsMeetingLink": "https://testmeeting"
 }
 
@@ -192,4 +192,7 @@ DELETE http://localhost:8080/skills/65f8fdf73048b77e2f8b7a94 HTTP/1.1
 
 ### DELETE USER SKILLS BY ID
 DELETE http://localhost:8080/availabilities/65f90abaaf8d0eb814b37c0c HTTP/1.1
+
+### DELETE USER SKILLS BY ID
+DELETE http://localhost:8080/sessions/65f916fa820760e4a562c36a HTTP/1.1
 

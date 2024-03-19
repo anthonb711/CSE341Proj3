@@ -95,10 +95,31 @@ const updateSession = async (req, res) => {
   }
 };
 
+/************************************************************************
+ *  DELETE SESSION BY ID - HTTP:DELETE
+ *************************************************************************/
+const deleteSession = async (req, res) => {
+  // #swagger.tags = ['Sessions']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+
+  const sessionId = new ObjectId(req.params.id);
+
+  try {
+    await Session.deleteOne({ _id: sessionId });
+    res.sendStatus(200);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   getSessions,
   addSession,
   getSessionById,
-  updateSession
-  //deleteSession,
+  updateSession,
+  deleteSession
 };

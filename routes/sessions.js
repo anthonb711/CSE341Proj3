@@ -7,6 +7,6 @@ routes.post('/', /*requiresAuth(),*/ controller.addSession);
 
 routes.get('/:id', /*requiresAuth(),*/ controller.getSessionById);
 routes.put('/:id', /*requiresAuth(),*/ controller.updateSession);
-//routes.delete('/:id', /*requiresAuth(),*/ controller.deleteSession);
+routes.delete('/:id', /*requiresAuth(),*/ controller.deleteSession);
 
 module.exports = routes;
