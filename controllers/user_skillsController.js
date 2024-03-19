@@ -42,10 +42,42 @@ const addUserSkill = async (req, res) => {
   }
 };
 
+/************************************************************************
+ *  UPDATE USER SKILL BY ID - HTTP:PUT
+ *************************************************************************/
+const updateUserSkills = async (req, res) => {
+  // #swagger.tags = ['User Skills']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+
+  const userSkillId = new ObjectId(req.params.id);
+  console.log(req.params.id);
+
+  try {
+    const { userSkillID, userID, skillID, skillLevel, isTeachable, isLearnable } = req.body;
+
+    const userSkillUpdate = await UserSkill.findOneAndUpdate(
+      { _id: userSkillId },
+      { userSkillID, userID, skillID, skillLevel, isTeachable, isLearnable },
+      { new: true }
+    );
+
+    if (!userSkillUpdate) {
+      return res.status(404).json({ error: 'User skill not found' });
+    }
+    res.sendStatus(204);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   getUserSkills,
-  addUserSkill
+  addUserSkill,
   //    getUserSkillsById,
-  //    updateUserSkills,
+  updateUserSkills
   //    deleteUserSkills
 };

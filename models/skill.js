@@ -10,4 +10,4 @@ const SkillSchema = new mongoose.Schema({
 
 const Skill = mongoose.model('skills', SkillSchema);
 
-module.exports = UserSkill;
+module.exports = Skill;

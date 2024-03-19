@@ -277,6 +277,66 @@
         ]
       }
     },
+    "/user_skills/{id}": {
+      "put": {
+        "tags": ["User Skills"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userSkillID": {
+                  "example": "any"
+                },
+                "userID": {
+                  "example": "any"
+                },
+                "skillID": {
+                  "example": "any"
+                },
+                "skillLevel": {
+                  "example": "any"
+                },
+                "isTeachable": {
+                  "example": "any"
+                },
+                "isLearnable": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": ["read", "write"]
+          }
+        ]
+      }
+    },
     "/availabilities/": {
       "get": {
         "tags": ["Availabilities"],

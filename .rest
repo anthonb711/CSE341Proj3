@@ -1,4 +1,6 @@
-###
+//*****************************************************
+//  GET ALL'S
+//*****************************************************
 ### HOME
 GET http://localhost:8080/ HTTP/1.1
 
@@ -23,10 +25,18 @@ GET http://localhost:8080/sessions HTTP/1.1
 ### FEEDBACK
 GET http://localhost:8080/feedback HTTP/1.1
 
+
+//*****************************************************
+// GET BY ID'S
+//*****************************************************
+
 ### USER PROFILE BY ID
 GET http://localhost:8080/user_profile/65f66b60494f6b04413aa2c3 HTTP/1.1
 
 
+//*****************************************************
+//  CREATES
+//*****************************************************
 ### ADD USER PROFILE
 POST http://localhost:8080/user_profile HTTP/1.1
 Content-Type: application/json
@@ -52,6 +62,10 @@ Content-Type: application/json
   "isLearnable" : "y"
 }
 
+
+//*****************************************************
+//  UPDATE BY ID'S
+//*****************************************************
 ### UPDATE USER PROFILE
 PUT http://localhost:8080/user_profile/65f679a6cfc37caa923153e3 HTTP/1.1
 Content-Type: application/json
@@ -64,18 +78,24 @@ Content-Type: application/json
   "email" :"anthonb711@icloud.com"
 }
 
-### DELETE USER PROFILE BY ID
-DELETE http://localhost:8080/user_profile/65f679a6cfc37caa923153e3 HTTP/1.1
-
-//**************************************RENDER****************************************************//
-### CREATE USER_PROFILE
-POST https://cse341proj3.onrender.com/ HTTP/1.1
+### UPDATE USER SKILL
+PUT http://localhost:8080/user_skills/65f679a6cfc37caa923153e3 HTTP/1.1
 Content-Type: application/json
 
 {
-  "userID": "12345",
-  "firstName": "Anthon",
-  "lastName": "Brown",
-  "teamsID": "anthonb711@byui.edu",
-  "email": "anthonb711@icloud.com"
+  "userSkillID" : "5486",
+  "userID": "15",
+  "skillID": "3",
+  "skillLevel": "expert",
+  "isTeachable" : "y",
+  "isLearnable" : "n"
 }
+
+
+//*****************************************************
+//  DELETES
+//*****************************************************
+
+### DELETE USER PROFILE BY ID
+DELETE http://localhost:8080/user_profile/65f679a6cfc37caa923153e3 HTTP/1.1
+
