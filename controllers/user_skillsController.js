@@ -17,17 +17,35 @@ const getUserSkills = async (req, res) => {
   }
 };
 
+/************************************************************************
+ *  ADD USER SKILL - HTTP:POST
+ *************************************************************************/
+const addUserSkill = async (req, res) => {
+  // #swagger.tags = ['User Skills']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  try {
+    const { userSkillID, userID, skillID, skillLevel, isTeachable, isLearnable } = req.body;
+    const userSkill = new UserSkill({
+      userSkillID,
+      userID,
+      skillID,
+      skillLevel,
+      isTeachable,
+      isLearnable
+    });
+
+    const insertedUserSkill = await userSkill.save();
+    res.status(201).json(insertedUserSkill._id);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
-  getUserSkills //,
-  //    addUserSkills,
+  getUserSkills,
+  addUserSkill
   //    getUserSkillsById,
   //    updateUserSkills,
   //    deleteUserSkills
 };
-
-/*
- addUserSkills,
-    getUserSkillsById,
-    updateUserSkills,
-    deleteUserSkills
-*/

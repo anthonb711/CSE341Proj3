@@ -25,9 +25,7 @@ const addUserProfile = async (req, res) => {
   //#swagger.security = [{"OAuth2": ['read', 'write']}]
 
   try {
-    console.log(req.body);
     const { userID, firstName, lastName, teamsID, email } = req.body;
-    console.log(`${req.body.userID} req.body1`);
     const userProfile = new UserProfile({
       userID,
       firstName,

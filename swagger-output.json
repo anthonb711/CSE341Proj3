@@ -229,6 +229,52 @@
             "OAuth2": ["read", "write"]
           }
         ]
+      },
+      "post": {
+        "tags": ["User Skills"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userSkillID": {
+                  "example": "any"
+                },
+                "userID": {
+                  "example": "any"
+                },
+                "skillID": {
+                  "example": "any"
+                },
+                "skillLevel": {
+                  "example": "any"
+                },
+                "isTeachable": {
+                  "example": "any"
+                },
+                "isLearnable": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": ["read", "write"]
+          }
+        ]
       }
     },
     "/availabilities/": {
