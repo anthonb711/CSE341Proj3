@@ -23,7 +23,10 @@ GET http://localhost:8080/sessions HTTP/1.1
 ### FEEDBACK
 GET http://localhost:8080/feedback HTTP/1.1
 
-//***************************************************************************************************//
+//************************************************************************************************//
+### USER_PROFILE BY ID
+GET http://localhost:8080/user_profile/65f66b60494f6b04413aa2c3 HTTP/1.1
+
 
 ### CREATE USER_PROFILE
 POST http://localhost:8080/user_profile HTTP/1.1
@@ -37,10 +40,22 @@ Content-Type: application/json
   "email" :"anthonb711@icloud.com"
 }
 
+### UPDATE USER PROFILE
+PUT http://localhost:8080/user_profile/65f679a6cfc37caa923153e3 HTTP/1.1
+Content-Type: application/json
 
+{
+  "userID" :"54321",
+  "firstName": "Updated",
+  "lastName": "from localhost",
+  "teamsID": "PUT",
+  "email" :"anthonb711@icloud.com"
+}
 
+### DELETE USER PROFILE BY ID
+DELETE http://localhost:8080/user_profile/65f679a6cfc37caa923153e3 HTTP/1.1
 
-//**************************************RENDER*****************************************************//
+//**************************************RENDER****************************************************//
 ### CREATE USER_PROFILE
 POST https://cse341proj3.onrender.com/ HTTP/1.1
 Content-Type: application/json
