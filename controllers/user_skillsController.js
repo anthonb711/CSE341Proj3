@@ -52,6 +52,7 @@ const getUserSkillsById = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Invalid ID');
   }
+
   const userSkillId = new ObjectId(req.params.id);
   try {
     const thisUserSkill = await UserSkill.findById(userSkillId);
@@ -78,7 +79,6 @@ const updateUserSkills = async (req, res) => {
 
   try {
     const { userSkillID, userID, skillID, skillLevel, isTeachable, isLearnable } = req.body;
-
     const userSkillUpdate = await UserSkill.findOneAndUpdate(
       { _id: userSkillId },
       { userSkillID, userID, skillID, skillLevel, isTeachable, isLearnable },
