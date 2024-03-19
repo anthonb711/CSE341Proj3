@@ -1,48 +1,79 @@
-# CSE341Proj3 is a collabortive effort for the final team project for CSE341 Web Services.
+# SkillSwap: Community Skill Exchange API
 
-For the final project, I think it might be interesting to create a community app for skill exchange app called "SkillSwap", somewhat like a barter system for learning and teaching. In this platform, I will create a profile detailing the skills I can offer, the ones I'm eager to learn, my availability, and my Microsoft Teams ID for remote sessions. The platform is built on the principle of equitable exchange, requiring me to teach a session before I can learn again, thereby ensuring a balance in the ratio of teaching to learning to maintain fairness among all users. The focus is on matching users based on shared learning interests and availability. A feedback mechanism after each session will help ensure the quality and reliability of the teaching sessions. With a strong emphasis on security and privacy, my personal information is safeguarded and only shared with confirmed matches.
+# SkillSwap (BYUI CSE341Proj3) is a collaborative effort for the final team project for CSE341 Web Services
 
-1. user_profile
-   UserID: Unique identifier for each user.
-   FirstName: User's first name.
-   LastName: User's last name (optional, based on privacy preferences).
-   TeamsID: Microsoft Teams ID for remote sessions.
-   EmailAddress: Contact email address.
-   PasswordHash: Hashed password for secure login.
+## Overview
 
-2. skills
-   SkillID: Unique identifier for each skill.
-   SkillName: Name of the skill (e.g., Python Programming, Graphic Design).
-   Category: Broader category the skill falls under (e.g., Technology, Art).
-   Description: A brief description of the skill.
+SkillSwap is a community-driven app designed to facilitate the exchange of skills in a barter-like system. Users can offer skills they are proficient in and seek out new skills they wish to learn. The platform ensures an equitable exchange by requiring users to teach a session before they can learn again, maintaining a balanced teaching-learning ratio.
 
-3. user_skills
-   UserSkillID: Unique identifier for each user-skill mapping.
-   UserID: Link to the User Profile.
-   SkillID: Link to the Skills.
-   SkillLevel: The user's proficiency level in the skill (e.g., Beginner, Intermediate, Advanced).
-   IsTeachable: Boolean indicating if the user is willing to teach this skill.
-   IsLearnable: Boolean indicating if the user wants to learn this skill.
+## Features
 
-4. availabilities
-   AvailabilityID: Unique identifier for each availability slot.
-   UserID: Link to the User Profile.
-   StartTime: Start time of the availability slot.
-   EndTime: End time of the availability slot.
-   IsBooked: Boolean indicating if the slot is booked.
+- **User Profiles:** Create detailed profiles with offered and desired skills, availability, and contact information for remote learning sessions.
+- **Availabiilities:** Connects users based on shared learning interests and availability schedules.
+- **Feedback Mechanism:** Post-session feedback ensures the quality and reliability of teaching sessions.
+- **Security and Privacy:** Personal information is protected and shared only with confirmed matches.
 
-5. sessions
-   SessionID: Unique identifier for each teaching/learning session.
-   TutorUserID: User ID of the tutor.
-   LearnerUserID: User ID of the learner.
-   SkillID: Skill being taught.
-   SessionTime: Timestamp for when the session is scheduled.
-   TeamsMeetingLink: Microsoft Teams link for the remote session.
+## Data Structure
 
-6. feedbacks
-   FeedbackID: Unique identifier for each feedback entry.
-   SessionID: Link to the Sessions.
-   FromUserID: User ID of the feedback giver.
-   ToUserID: User ID of the feedback receiver.
-   Rating: Numerical rating given.
-   Comments: Optional textual feedback.
+### User Profile
+
+- `UserID`: Unique identifier for each user.
+- `FirstName`: User's first name.
+- `LastName`: User's last name (optional, for privacy).
+- `TeamsID`: Microsoft Teams ID for remote sessions.
+- `EmailAddress`: Contact email address.
+
+### Skills
+
+- `SkillID`: Unique identifier for each skill.
+- `SkillName`: Name of the skill (e.g., Python Programming, Graphic Design).
+- `Category`: Broader category of the skill (e.g., Technology, Art).
+- `Description`: Brief description of the skill.
+
+### User Skills
+
+- `UserSkillID`: Unique identifier for each user-skill mapping.
+- `UserID`: Link to the User Profile.
+- `SkillID`: Link to the Skills.
+- `SkillLevel`: User's proficiency level in the skill (e.g., Beginner, Intermediate, Advanced).
+- `IsTeachable`: Boolean indicating if the user is willing to teach this skill.
+- `IsLearnable`: Boolean indicating if the user wants to learn this skill.
+
+### Availabilities
+
+- `AvailabilityID`: Unique identifier for each availability slot.
+- `UserID`: Link to the User Profile.
+- `StartTime`: Start time of the availability slot.
+- `EndTime`: End time of the availability slot.
+- `IsBooked`: Boolean indicating if the slot is booked.
+
+### Sessions
+
+- `SessionID`: Unique identifier for each teaching/learning session.
+- `TutorUserID`: User ID of the tutor.
+- `LearnerUserID`: User ID of the learner.
+- `SkillID`: Skill being taught.
+- `SessionTime`: Timestamp for the session.
+- `TeamsMeetingLink`: Microsoft Teams link for the remote session.
+
+### Feedbacks
+
+- `FeedbackID`: Unique identifier for each feedback entry.
+- `SessionID`: Link to the Sessions.
+- `FromUserID`: User ID of the feedback giver.
+- `ToUserID`: User ID of the feedback receiver.
+- `Rating`: Numerical rating given.
+- `Comments`: Optional textual feedback.
+
+## Getting Started
+
+To contribute to SkillSwap, please follow these steps:
+
+1. Clone the repository to your local machine.
+2. Set up your development environment.
+3. Review the open issues for tasks that need attention.
+4. Make your changes in a separate branch and submit a pull request.
+
+## API Contract
+
+https://cse341proj3.onrender.com/api-docs
