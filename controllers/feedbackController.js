@@ -96,10 +96,31 @@ const updateFeedback = async (req, res) => {
   }
 };
 
+/************************************************************************
+ *  DELETE FEEDBACK BY ID - HTTP:DELETE
+ *************************************************************************/
+const deleteFeedback = async (req, res) => {
+  // #swagger.tags = ['Feedback']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+
+  const feedbackId = new ObjectId(req.params.id);
+
+  try {
+    await Feedback.deleteOne({ _id: feedbackId });
+    res.sendStatus(200);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   getFeedback,
   addFeedback,
   getFeedbackById,
-  updateFeedback
-  //deleteFeedback,
+  updateFeedback,
+  deleteFeedback
 };

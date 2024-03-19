@@ -113,7 +113,7 @@ Content-Type: application/json
   "teamsMeetingLink": "https://testmeeting"
 }
 
-### ADD SESSION
+### ADD FEEDBACK
 POST http://localhost:8080/feedback HTTP/1.1
 Content-Type: application/json
 
@@ -218,12 +218,15 @@ DELETE http://localhost:8080/user_profile/65f679a6cfc37caa923153e3 HTTP/1.1
 ### DELETE USER SKILLS BY ID
 DELETE http://localhost:8080/user_skills/65f8f1d79164614b3b340246 HTTP/1.1
 
-### DELETE USER SKILLS BY ID
+### DELETE SKILLS BY ID
 DELETE http://localhost:8080/skills/65f8fdf73048b77e2f8b7a94 HTTP/1.1
 
-### DELETE USER SKILLS BY ID
+### DELETE AVAILABLITY BY ID
 DELETE http://localhost:8080/availabilities/65f90abaaf8d0eb814b37c0c HTTP/1.1
 
-### DELETE USER SKILLS BY ID
+### DELETE SESSIONS BY ID
 DELETE http://localhost:8080/sessions/65f916fa820760e4a562c36a HTTP/1.1
+
+### DELETE FEEDBACK BY ID
+DELETE http://localhost:8080/feedback/65f916fa820760e4a562c36a HTTP/1.1
 
