@@ -39,8 +39,11 @@ GET http://localhost:8080/user_skills/65f8ed54820760e4a562c34f HTTP/1.1
 ### SKILLS BY ID
 GET http://localhost:8080/skills/65f8fdf73048b77e2f8b7a94 HTTP/1.1
 
-### Availabilities BY ID
+### AVAILABILITIES BY ID
 GET http://localhost:8080/availabilities/65f90d4caf8d0eb814b37c15 HTTP/1.1
+
+### SESSION BY ID
+GET http://localhost:8080/sessions/65f918a94db66872581a867d HTTP/1.1
 
 
 //*****************************************************

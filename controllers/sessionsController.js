@@ -42,19 +42,32 @@ const addSession = async (req, res) => {
   }
 };
 
+/************************************************************************
+ *  GET SESSION BY ID - HTTP:GET
+ *************************************************************************/
+const getSessionById = async (req, res) => {
+  // #swagger.tags = ['Sessions']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+
+  const sessionId = new ObjectId(req.params.id);
+
+  try {
+    const thisSession = await Session.findById(sessionId);
+    res.status(200).json(thisSession);
+  } catch (error) {
+    console.error('Error fetching session by ID:');
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
 module.exports = {
   getSessions,
-  addSession
-  //getSessionById,
+  addSession,
+  getSessionById
   //updateSession,
   //deleteSession,
 };
-/*
-  "sessionID": "1",
-  "tutuorUserID": "4",
-  "learnerID": "2",
-  "skillID": "1",
-  "sessionTime": "2025",
-  "teamsMeetingLink": "https://testmeeting"
-}
-*/
