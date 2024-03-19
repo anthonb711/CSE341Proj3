@@ -7,5 +7,6 @@ routes.post('/', /*requiresAuth(),*/ controller.addSkill);
 
 routes.get('/:id', /*requiresAuth(),*/ controller.getSkillById);
 routes.put('/:id', /*requiresAuth(),*/ controller.updateSkill);
-//routes.delete('/:id', /*requiresAuth(),*/ controller.deleteSkill);
+routes.delete('/:id', /*requiresAuth(),*/ controller.deleteSkill);
+
 module.exports = routes;
