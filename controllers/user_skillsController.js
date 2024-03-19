@@ -94,10 +94,30 @@ const updateUserSkills = async (req, res) => {
   }
 };
 
+/************************************************************************
+ *  DELETE USER SKILL BY ID - HTTP:DELETE
+ *************************************************************************/
+const deleteUserSkills = async (req, res) => {
+  // #swagger.tags = ['User Skills']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+  const userSkillsId = new ObjectId(req.params.id);
+
+  try {
+    await UserSkill.deleteOne({ _id: userSkillsId });
+    res.sendStatus(200);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   getUserSkills,
   addUserSkill,
   getUserSkillsById,
-  updateUserSkills
-  //    deleteUserSkills
+  updateUserSkills,
+  deleteUserSkills
 };

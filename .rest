@@ -34,7 +34,7 @@ GET http://localhost:8080/feedback HTTP/1.1
 GET http://localhost:8080/user_profile/65f66b60494f6b04413aa2c3 HTTP/1.1
 
 ### USER SKILLS BY ID
-GET http://localhost:8080/user_skills/65f8f1d79164614b3b340246 HTTP/1.1
+GET http://localhost:8080/user_skills/65f8ed54820760e4a562c34f HTTP/1.1
 
 
 //*****************************************************
@@ -101,4 +101,7 @@ Content-Type: application/json
 
 ### DELETE USER PROFILE BY ID
 DELETE http://localhost:8080/user_profile/65f679a6cfc37caa923153e3 HTTP/1.1
+
+### DELETE USER SKILLS BY ID
+DELETE http://localhost:8080/user_skills/65f8f1d79164614b3b340246 HTTP/1.1
 
