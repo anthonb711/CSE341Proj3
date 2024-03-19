@@ -43,7 +43,24 @@ const addSkill = async (req, res) => {
 /*************************************************************************
  *  GET SKILL BY ID - HTTP:GET
  *************************************************************************/
+const getSkillById = async (req, res) => {
+  // #swagger.tags = ['Skills']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
 
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+
+  const skillId = new ObjectId(req.params.id);
+
+  try {
+    const thisSkill = await Skill.findById(skillId);
+    res.status(200).json(thisSkill);
+  } catch (error) {
+    console.error('Error fetching skill by ID:');
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
 /*************************************************************************
  *  UPDATE SKILL BY ID - HTTP:PUT
  *************************************************************************/
@@ -54,8 +71,8 @@ const addSkill = async (req, res) => {
 
 module.exports = {
   getSkills,
-  addSkill
-  //getSkillById,
+  addSkill,
+  getSkillById
   //updateSkill,
   //deleteSkill
 };
