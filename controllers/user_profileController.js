@@ -2,7 +2,11 @@ const ObjectId = require('mongodb').ObjectId;
 const { json } = require('body-parser');
 const UserProfile = require('../models/user_profile');
 
-const getProfiles = async (req, res) => {
+
+/************************************************************************
+*    GET USER PROFILES - HTTP:GET
+*************************************************************************/
+const getUserProfiles = async (req, res) => {
   // #swagger.tags = ['User Profile']
   /* #swagger.security = [{
             "OAuth2": [
@@ -20,7 +24,9 @@ const getProfiles = async (req, res) => {
   }
 };
 
-// POSTS
+/************************************************************************
+*    ADD USER PROFILE - HTTP:POST
+*************************************************************************/
 const addUserProfile = async (req, res) => {
   // #swagger.tags = ['User Profile']
   /* #swagger.security = [{
@@ -48,7 +54,11 @@ const addUserProfile = async (req, res) => {
   }
 };
 
-const getProfileById = async (req, res) => {
+
+/************************************************************************
+*    GET USER PROFILE BY ID - HTTP:GET
+*************************************************************************/
+const getUserProfileById = async (req, res) => {
   // #swagger.tags = ['User Profile']
   /* #swagger.security = [{
             "OAuth2": [
@@ -59,18 +69,62 @@ const getProfileById = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Invalid ID');
   }
-  const profileId = new ObjectId(req.params.id);
+  const userProfileId = new ObjectId(req.params.id);
   try {
-    const thisProfile = await UserProfile.findById(profileId);
-    res.status(200).json(thisProfile);
+    const thisUserProfile = await UserProfile.findById(userProfileId);
+    res.status(200).json(thisUserProfile);
   } catch (error) {
-    console.error('Error fetching profile by ID:');
+    console.error('Error fetching user profile by ID:');
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
 
+/************************************************************************
+*  UPDATE USER PROFILE BY ID - HTTP:PUT
+*************************************************************************/
+const updateUserProfile = async (req, res) => {
+  // #swagger.tags = ['User Profile']
+  /* #swagger.security = [{
+            "OAuth2": [
+                'read', 
+                'write'
+            ]
+    }] */
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+  const userProfileId = new ObjectId(req.params.id);
+  console.log(req.params.id);
+  try {
+    const { userID, firstName, lastName, teamsID, email } = req.body;
+    const userProfileUpdate = await UserProfile.findOneAndUpdate(
+      { _id: userProfileId },
+      {
+          firstName,
+          userID,
+          teamsID,
+          lastName,
+          email
+      },
+      { new: true }
+    );
+    if (!userProfileUpdate) {
+      return res.status(404).json({ error: 'User profile not found' });
+    }
+
+    res.sendStatus(204);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+/************************************************************************
+*    DELETE USER PROFILE BY ID - HTTP:DELETE
+*************************************************************************/
+
 module.exports = {
-  getProfiles,
+  getUserProfiles,
   addUserProfile,
-  getProfileById
+  getUserProfileById,
+  updateUserProfile
 };
