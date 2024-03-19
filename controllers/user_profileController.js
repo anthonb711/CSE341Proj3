@@ -110,7 +110,6 @@ const deleteUserProfile = async (req, res) => {
   try {
     await UserProfile.deleteOne({ _id: userProfileId });
     res.sendStatus(200);
-
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

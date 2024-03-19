@@ -5,10 +5,10 @@ GET http://localhost:8080/ HTTP/1.1
 ### PROFILE
 GET http://localhost:8080/profile HTTP/1.1
 
-### USER_PROFILE
+### GET USER PROFILES
 GET http://localhost:8080/user_profile HTTP/1.1
 
-### USER_SKILLS
+### GET USER SKILLS
 GET http://localhost:8080/user_skills HTTP/1.1
 
 ### SKILLS
@@ -23,7 +23,6 @@ GET http://localhost:8080/sessions HTTP/1.1
 ### FEEDBACK
 GET http://localhost:8080/feedback HTTP/1.1
 
-//************************************************************************************************//
 ### USER_PROFILE BY ID
 GET http://localhost:8080/user_profile/65f66b60494f6b04413aa2c3 HTTP/1.1
 
