@@ -1014,6 +1014,67 @@
             "OAuth2": ["read", "write"]
           }
         ]
+      },
+      "put": {
+        "tags": ["Feedback"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "feedbackID": {
+                  "example": "any"
+                },
+                "sessionID": {
+                  "example": "any"
+                },
+                "fromUserID": {
+                  "example": "any"
+                },
+                "toUserID": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "comment": {
+                  "example": "any"
+                },
+                "time": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": ["read", "write"]
+          }
+        ]
       }
     }
   }

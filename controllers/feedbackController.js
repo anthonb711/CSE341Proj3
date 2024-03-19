@@ -65,10 +65,41 @@ const getFeedbackById = async (req, res) => {
   }
 };
 
+/************************************************************************
+ *  UPDATE FEEDBACK BY ID - HTTP:PUT
+ *************************************************************************/
+const updateFeedback = async (req, res) => {
+  // #swagger.tags = ['Feedback']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+
+  const feedbackId = new ObjectId(req.params.id);
+  console.log(req.params.id);
+
+  try {
+    const { feedbackID, sessionID, fromUserID, toUserID, rating, comment, time } = req.body;
+    const feedbackUpdate = await Feedback.findOneAndUpdate(
+      { _id: feedbackId },
+      { feedbackID, sessionID, fromUserID, toUserID, rating, comment, time },
+      { new: true }
+    );
+
+    if (!feedbackUpdate) {
+      return res.status(404).json({ error: 'Feedback not found' });
+    }
+    res.sendStatus(204);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   getFeedback,
   addFeedback,
-  getFeedbackById
-  //updateFeedback,
+  getFeedbackById,
+  updateFeedback
   //deleteFeedback,
 };
