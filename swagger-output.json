@@ -935,6 +935,55 @@
             "OAuth2": ["read", "write"]
           }
         ]
+      },
+      "post": {
+        "tags": ["Feedback"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "feedbackID": {
+                  "example": "any"
+                },
+                "sessionID": {
+                  "example": "any"
+                },
+                "fromUserID": {
+                  "example": "any"
+                },
+                "toUserID": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "comment": {
+                  "example": "any"
+                },
+                "time": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": ["read", "write"]
+          }
+        ]
       }
     }
   }

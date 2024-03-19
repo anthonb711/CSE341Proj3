@@ -17,9 +17,35 @@ const getFeedback = async (req, res) => {
   }
 };
 
+/************************************************************************
+ *  ADD FEEDBACK - HTTP:POST
+ *************************************************************************/
+const addFeedback = async (req, res) => {
+  // #swagger.tags = ['Feedback']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  try {
+    const { feedbackID, sessionID, fromUserID, toUserID, rating, comment, time } = req.body;
+    const feedback = new Feedback({
+      feedbackID,
+      sessionID,
+      fromUserID,
+      toUserID,
+      rating,
+      comment,
+      time
+    });
+
+    const insertedFeedback = await feedback.save();
+    res.status(201).json(insertedFeedback._id);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
-  getFeedback
-  //addFeedback,
+  getFeedback,
+  addFeedback
 
   //getFeedbackById,
   //updateFeedback,

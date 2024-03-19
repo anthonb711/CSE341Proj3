@@ -110,6 +110,20 @@ Content-Type: application/json
   "teamsMeetingLink": "https://testmeeting"
 }
 
+### ADD SESSION
+POST http://localhost:8080/feedback HTTP/1.1
+Content-Type: application/json
+
+{
+    "feedbackID": "4",
+    "sessionID": "16",
+    "fromUserID": "15",
+    "toUserID": "18",
+    "rating": "10",
+    "comment": "The best",
+    "time": ""
+}
+
 
 
 //*****************************************************
