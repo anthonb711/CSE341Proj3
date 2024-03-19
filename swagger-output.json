@@ -744,9 +744,16 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         },
-        "security": []
+        "security": [
+          {
+            "OAuth2": ["read", "write"]
+          }
+        ]
       }
     },
     "/feedback/": {

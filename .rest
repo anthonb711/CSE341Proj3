@@ -82,7 +82,7 @@ Content-Type: application/json
   "description": "Weaving/Knitting"
 }
 
-### ADD AVAILABILITIES
+### ADD AVAILABILITY
 POST http://localhost:8080/availabilities HTTP/1.1
 Content-Type: application/json
 
@@ -93,6 +93,20 @@ Content-Type: application/json
   "endTime": "1991-04-25T23:00:00",
   "isBooked": "y"
 }
+
+### ADD SESSION
+POST http://localhost:8080/sessions HTTP/1.1
+Content-Type: application/json
+
+{
+  "sessionID": "1",
+  "tutuorUserID": "4",
+  "learnerID": "2",
+  "skillID": "1",
+  "sessionTime": "2025",
+  "teamsMeetingLink": "https://testmeeting"
+}
+
 
 
 //*****************************************************

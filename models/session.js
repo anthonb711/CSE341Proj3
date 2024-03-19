@@ -9,6 +9,6 @@ const SessionSchema = new mongoose.Schema({
   teamsMeetingLink: { type: String, required: true }
 });
 
-const Skill = mongoose.model('sessions', SessionSchema);
+const Session = mongoose.model('session', SessionSchema);
 
-module.exports = SessionSkill;
+module.exports = Session;
