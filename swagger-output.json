@@ -7,19 +7,13 @@
   },
   "host": "cse341proj3.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
     "/": {
       "get": {
-        "tags": [
-          "Home"
-        ],
+        "tags": ["Home"],
         "description": "",
-        "produces": [
-          "text/html"
-        ],
+        "produces": ["text/html"],
         "responses": {
           "200": {
             "description": "OK"
@@ -29,9 +23,7 @@
     },
     "/profile/": {
       "get": {
-        "tags": [
-          "Profile"
-        ],
+        "tags": ["Profile"],
         "description": "",
         "responses": {
           "200": {
@@ -40,18 +32,14 @@
         },
         "security": [
           {
-            "OAuth2": [
-              "read"
-            ]
+            "OAuth2": ["read"]
           }
         ]
       }
     },
     "/user_profile/": {
       "get": {
-        "tags": [
-          "User Profile"
-        ],
+        "tags": ["User Profile"],
         "description": "",
         "responses": {
           "200": {
@@ -63,17 +51,12 @@
         },
         "security": [
           {
-            "OAuth2": [
-              "read",
-              "write"
-            ]
+            "OAuth2": ["read", "write"]
           }
         ]
       },
       "post": {
-        "tags": [
-          "User Profile"
-        ],
+        "tags": ["User Profile"],
         "description": "",
         "parameters": [
           {
@@ -111,19 +94,14 @@
         },
         "security": [
           {
-            "OAuth2": [
-              "read",
-              "write"
-            ]
+            "OAuth2": ["read", "write"]
           }
         ]
       }
     },
     "/user_profile/{id}": {
       "get": {
-        "tags": [
-          "User Profile"
-        ],
+        "tags": ["User Profile"],
         "description": "",
         "parameters": [
           {
@@ -146,17 +124,12 @@
         },
         "security": [
           {
-            "OAuth2": [
-              "read",
-              "write"
-            ]
+            "OAuth2": ["read", "write"]
           }
         ]
       },
       "put": {
-        "tags": [
-          "User Profile"
-        ],
+        "tags": ["User Profile"],
         "description": "",
         "parameters": [
           {
@@ -206,17 +179,12 @@
         },
         "security": [
           {
-            "OAuth2": [
-              "read",
-              "write"
-            ]
+            "OAuth2": ["read", "write"]
           }
         ]
       },
       "delete": {
-        "tags": [
-          "User Profile"
-        ],
+        "tags": ["User Profile"],
         "description": "",
         "parameters": [
           {
@@ -239,47 +207,195 @@
         },
         "security": [
           {
-            "OAuth2": [
-              "read",
-              "write"
-            ]
+            "OAuth2": ["read", "write"]
           }
         ]
       }
     },
     "/user_skills/": {
       "get": {
-        "tags": [
-          "User Skills"
-        ],
+        "tags": ["User Skills"],
         "description": "",
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         },
-        "security": []
+        "security": [
+          {
+            "OAuth2": ["read", "write"]
+          }
+        ]
+      },
+      "post": {
+        "tags": ["User Skills"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userSkillID": {
+                  "example": "any"
+                },
+                "userID": {
+                  "example": "any"
+                },
+                "skillID": {
+                  "example": "any"
+                },
+                "skillLevel": {
+                  "example": "any"
+                },
+                "isTeachable": {
+                  "example": "any"
+                },
+                "isLearnable": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": ["read", "write"]
+          }
+        ]
       }
     },
-    "/skills/": {
+    "/user_skills/{id}": {
       "get": {
-        "tags": [
-          "Skills"
-        ],
+        "tags": ["User Skills"],
         "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         },
-        "security": []
+        "security": [
+          {
+            "OAuth2": ["read", "write"]
+          }
+        ]
+      },
+      "put": {
+        "tags": ["User Skills"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userSkillID": {
+                  "example": "any"
+                },
+                "userID": {
+                  "example": "any"
+                },
+                "skillID": {
+                  "example": "any"
+                },
+                "skillLevel": {
+                  "example": "any"
+                },
+                "isTeachable": {
+                  "example": "any"
+                },
+                "isLearnable": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": ["read", "write"]
+          }
+        ]
+      },
+      "delete": {
+        "tags": ["User Skills"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": ["read", "write"]
+          }
+        ]
       }
     },
     "/availabilities/": {
       "get": {
-        "tags": [
-          "Availabilities"
-        ],
+        "tags": ["Availabilities"],
         "description": "",
         "responses": {
           "200": {
@@ -291,9 +407,7 @@
     },
     "/sessions/": {
       "get": {
-        "tags": [
-          "Sessions"
-        ],
+        "tags": ["Sessions"],
         "description": "",
         "responses": {
           "200": {
@@ -305,9 +419,7 @@
     },
     "/feedback/": {
       "get": {
-        "tags": [
-          "Feedback"
-        ],
+        "tags": ["Feedback"],
         "description": "",
         "responses": {
           "200": {
