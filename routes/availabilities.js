@@ -6,7 +6,7 @@ routes.get('/', /*requiresAuth(),*/ controller.getAvailabilities);
 routes.post('/', /*requiresAuth(),*/ controller.addAvailabilities);
 
 routes.get('/:id', /*requiresAuth(),*/ controller.getAvailabilityId);
-//routes.put('/:id', /*requiresAuth(),*/ controller.updateAvailabilities);
+routes.put('/:id', /*requiresAuth(),*/ controller.updateAvailability);
 //routes.delete('/:id', /*requiresAuth(),*/ controller.deleteAvailabilities);
 
 module.exports = routes;

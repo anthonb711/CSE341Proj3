@@ -55,17 +55,49 @@ const getAvailabilityId = async (req, res) => {
   const availabilityId = new ObjectId(req.params.id);
 
   try {
-    const thisAvailabilitiy = await Availability.findById(availabilityId);
-    res.status(200).json(thisAvailabilitiy);
+    const thisAvailability = await Availability.findById(availabilityId);
+    res.status(200).json(thisAvailability);
   } catch (error) {
     console.error('Error fetching availability by ID:');
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
+/************************************************************************
+ *  UPDATE AVAILIBILITY BY ID - HTTP:PUT
+ *************************************************************************/
+const updateAvailability = async (req, res) => {
+  // #swagger.tags = ['Availabilities']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+
+  const availabilityId = new ObjectId(req.params.id);
+  console.log(req.params.id);
+
+  try {
+    const { availabilityID, userID, startTime, endTime, isBooked } = req.body;
+    const availabilityUpdate = await Availability.findOneAndUpdate(
+      { _id: availabilityId },
+      { availabilityID, userID, startTime, endTime, isBooked },
+      { new: true }
+    );
+
+    if (!availabilityUpdate) {
+      return res.status(404).json({ error: 'Availability' });
+    }
+    res.sendStatus(204);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   getAvailabilities,
   addAvailabilities,
-  getAvailabilityId
-  // updateAvailability,
+  getAvailabilityId,
+  updateAvailability
   //   deleteAvailability,
 };
