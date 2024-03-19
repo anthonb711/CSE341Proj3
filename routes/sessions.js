@@ -3,7 +3,7 @@ const controller = require('../controllers/sessionsController');
 const { requiresAuth } = require('express-openid-connect');
 
 routes.get('/', /*requiresAuth(),*/ controller.getSessions);
-//routes.post('/', /*requiresAuth(),*/ controller.addSession);
+routes.post('/', /*requiresAuth(),*/ controller.addSession);
 
 //routes.get('/:id', /*requiresAuth(),*/ controller.getSessionById);
 //routes.put('/:id', /*requiresAuth(),*/ controller.updateSession);

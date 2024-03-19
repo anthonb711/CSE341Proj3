@@ -99,11 +99,11 @@ POST http://localhost:8080/sessions HTTP/1.1
 Content-Type: application/json
 
 {
-  "sessionID": "1",
-  "tutuorUserID": "4",
-  "learnerID": "2",
-  "skillID": "1",
-  "sessionTime": "2025",
+  "sessionID": "2",
+  "tutorID": "3",
+  "learnerID": "3",
+  "skillID": "4",
+  "sessionTime": "2055",
   "teamsMeetingLink": "https://testmeeting"
 }
 
