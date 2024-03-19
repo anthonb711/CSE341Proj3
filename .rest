@@ -160,3 +160,6 @@ DELETE http://localhost:8080/user_skills/65f8f1d79164614b3b340246 HTTP/1.1
 ### DELETE USER SKILLS BY ID
 DELETE http://localhost:8080/skills/65f8fdf73048b77e2f8b7a94 HTTP/1.1
 
+### DELETE USER SKILLS BY ID
+DELETE http://localhost:8080/availabilities/65f90abaaf8d0eb814b37c0c HTTP/1.1
+

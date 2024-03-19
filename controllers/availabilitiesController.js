@@ -94,10 +94,31 @@ const updateAvailability = async (req, res) => {
   }
 };
 
+/************************************************************************
+ *  DELETE AVAILABILITY BY ID - HTTP:DELETE
+ *************************************************************************/
+const deleteAvailability = async (req, res) => {
+  // #swagger.tags = ['Availabilities']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+
+  const availabilityId = new ObjectId(req.params.id);
+
+  try {
+    await Availability.deleteOne({ _id: availabilityId });
+    res.sendStatus(200);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   getAvailabilities,
   addAvailabilities,
   getAvailabilityId,
-  updateAvailability
-  //   deleteAvailability,
+  updateAvailability,
+  deleteAvailability
 };
