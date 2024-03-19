@@ -43,11 +43,32 @@ const addFeedback = async (req, res) => {
   }
 };
 
+/************************************************************************
+ *  GET FEEDBACK BY ID - HTTP:GET
+ *************************************************************************/
+const getFeedbackById = async (req, res) => {
+  // #swagger.tags = ['Feedback']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+
+  const feedbackId = new ObjectId(req.params.id);
+
+  try {
+    const thisFeedback = await Feedback.findById(feedbackId);
+    res.status(200).json(thisFeedback);
+  } catch (error) {
+    console.error('Error fetching feeback by ID:');
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
 module.exports = {
   getFeedback,
-  addFeedback
-
-  //getFeedbackById,
+  addFeedback,
+  getFeedbackById
   //updateFeedback,
   //deleteFeedback,
 };
