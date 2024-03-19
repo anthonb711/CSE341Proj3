@@ -77,3 +77,10 @@ To contribute to SkillSwap, please follow these steps:
 ## API Contract
 
 https://cse341proj3.onrender.com/api-docs
+
+## Project Team Members
+
+Josh Morris
+Erick Patino
+Anthon Brown
+Chettra Ly
