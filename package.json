@@ -1,7 +1,7 @@
 {
   "name": "members",
   "version": "1.0.0",
-  "description": "",
+  "description": "For the final project, I think it might be interesting to create a community app for skill exchange app called \"SkillSwap\", somewhat like a barter system for learning and teaching. In this platform, I will create a profile detailing the skills I can offer, the ones I'm eager to learn, my availability, and my Microsoft Teams ID for remote sessions. The platform is built on the principle of equitable exchange, requiring me to teach a session before I can learn again, thereby ensuring a balance in the ratio of teaching to learning to maintain fairness among all users. The focus is on matching users based on shared learning interests and availability. A feedback mechanism after each session will help ensure the quality and reliability of the teaching sessions. With a strong emphasis on security and privacy, my personal information is safeguarded and only shared with confirmed matches.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
