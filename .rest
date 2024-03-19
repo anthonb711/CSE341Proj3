@@ -39,6 +39,9 @@ GET http://localhost:8080/user_skills/65f8ed54820760e4a562c34f HTTP/1.1
 ### SKILLS BY ID
 GET http://localhost:8080/skills/65f8fdf73048b77e2f8b7a94 HTTP/1.1
 
+### Availabilities BY ID
+GET http://localhost:8080/availabilities/65f8fdf73048b77e2f8b7a94 HTTP/1.1
+
 
 //*****************************************************
 //  CREATES
@@ -84,10 +87,10 @@ POST http://localhost:8080/availabilities HTTP/1.1
 Content-Type: application/json
 
 {
-  "availabilityID": "8",
+  "availabilityID": "7",
   "userID": "1234",
-  "startTime": "1991-04-20T:09:00:00.000z",
-  "endTime": "1991-04-25T:07:00:00.000z",
+  "startTime": "1991-04-20T14:30:00",
+  "endTime": "1991-04-25T23:00:00",
   "isBooked": "y"
 }
 

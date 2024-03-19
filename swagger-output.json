@@ -7,13 +7,19 @@
   },
   "host": "cse341proj3.onrender.com",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": [
+    "https"
+  ],
   "paths": {
     "/": {
       "get": {
-        "tags": ["Home"],
+        "tags": [
+          "Home"
+        ],
         "description": "",
-        "produces": ["text/html"],
+        "produces": [
+          "text/html"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -23,7 +29,9 @@
     },
     "/profile/": {
       "get": {
-        "tags": ["Profile"],
+        "tags": [
+          "Profile"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -32,14 +40,18 @@
         },
         "security": [
           {
-            "OAuth2": ["read"]
+            "OAuth2": [
+              "read"
+            ]
           }
         ]
       }
     },
     "/user_profile/": {
       "get": {
-        "tags": ["User Profile"],
+        "tags": [
+          "User Profile"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -51,12 +63,17 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       },
       "post": {
-        "tags": ["User Profile"],
+        "tags": [
+          "User Profile"
+        ],
         "description": "",
         "parameters": [
           {
@@ -94,14 +111,19 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       }
     },
     "/user_profile/{id}": {
       "get": {
-        "tags": ["User Profile"],
+        "tags": [
+          "User Profile"
+        ],
         "description": "",
         "parameters": [
           {
@@ -124,12 +146,17 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       },
       "put": {
-        "tags": ["User Profile"],
+        "tags": [
+          "User Profile"
+        ],
         "description": "",
         "parameters": [
           {
@@ -179,12 +206,17 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       },
       "delete": {
-        "tags": ["User Profile"],
+        "tags": [
+          "User Profile"
+        ],
         "description": "",
         "parameters": [
           {
@@ -207,14 +239,19 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       }
     },
     "/user_skills/": {
       "get": {
-        "tags": ["User Skills"],
+        "tags": [
+          "User Skills"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -226,12 +263,17 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       },
       "post": {
-        "tags": ["User Skills"],
+        "tags": [
+          "User Skills"
+        ],
         "description": "",
         "parameters": [
           {
@@ -272,14 +314,19 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       }
     },
     "/user_skills/{id}": {
       "get": {
-        "tags": ["User Skills"],
+        "tags": [
+          "User Skills"
+        ],
         "description": "",
         "parameters": [
           {
@@ -302,12 +349,17 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       },
       "put": {
-        "tags": ["User Skills"],
+        "tags": [
+          "User Skills"
+        ],
         "description": "",
         "parameters": [
           {
@@ -360,12 +412,17 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       },
       "delete": {
-        "tags": ["User Skills"],
+        "tags": [
+          "User Skills"
+        ],
         "description": "",
         "parameters": [
           {
@@ -388,14 +445,19 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       }
     },
     "/skills/": {
       "get": {
-        "tags": ["Skills"],
+        "tags": [
+          "Skills"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -407,12 +469,17 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       },
       "post": {
-        "tags": ["Skills"],
+        "tags": [
+          "Skills"
+        ],
         "description": "",
         "parameters": [
           {
@@ -447,14 +514,19 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       }
     },
     "/skills/{id}": {
       "get": {
-        "tags": ["Skills"],
+        "tags": [
+          "Skills"
+        ],
         "description": "",
         "parameters": [
           {
@@ -477,12 +549,17 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       },
       "put": {
-        "tags": ["Skills"],
+        "tags": [
+          "Skills"
+        ],
         "description": "",
         "parameters": [
           {
@@ -529,12 +606,17 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       },
       "delete": {
-        "tags": ["Skills"],
+        "tags": [
+          "Skills"
+        ],
         "description": "",
         "parameters": [
           {
@@ -557,14 +639,19 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       }
     },
     "/availabilities/": {
       "get": {
-        "tags": ["Availabilities"],
+        "tags": [
+          "Availabilities"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -576,12 +663,17 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       },
       "post": {
-        "tags": ["Availabilities"],
+        "tags": [
+          "Availabilities"
+        ],
         "description": "",
         "parameters": [
           {
@@ -619,14 +711,54 @@
         },
         "security": [
           {
-            "OAuth2": ["read", "write"]
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/availabilities/{id}": {
+      "get": {
+        "tags": [
+          "Availabilities"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
           }
         ]
       }
     },
     "/sessions/": {
       "get": {
-        "tags": ["Sessions"],
+        "tags": [
+          "Sessions"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -638,7 +770,9 @@
     },
     "/feedback/": {
       "get": {
-        "tags": ["Feedback"],
+        "tags": [
+          "Feedback"
+        ],
         "description": "",
         "responses": {
           "200": {

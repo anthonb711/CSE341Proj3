@@ -41,10 +41,31 @@ const addAvailabilities = async (req, res) => {
   }
 };
 
+/************************************************************************
+ *  GET AVAIALBILITY BY ID - HTTP:GET
+ *************************************************************************/
+const getAvailabilityId = async (req, res) => {
+  // #swagger.tags = ['Availabilities']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+
+  const availabilityId = new ObjectId(req.params.id);
+
+  try {
+    const thisAvailabilitiy = await Availability.findById(availabilityId);
+    res.status(200).json(thisAvailabilitiy);
+  } catch (error) {
+    console.error('Error fetching availability by ID:');
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
 module.exports = {
   getAvailabilities,
-  addAvailabilities
-  // getAvailabilitiesId,
-  // updateAvailabilities,
-  //   deleteAvailabilities,
+  addAvailabilities,
+  getAvailabilityId
+  // updateAvailability,
+  //   deleteAvailability,
 };
