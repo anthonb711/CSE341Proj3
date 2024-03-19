@@ -163,6 +163,19 @@ Content-Type: application/json
   "isBooked": "n"
 }
 
+### UPDATE AVAILABILITY
+PUT http://localhost:8080/sessions/65f916fa820760e4a562c36a HTTP/1.1
+Content-Type: application/json
+
+{
+  "sessionID": "2",
+  "tutorID": "3",
+  "learnerID": "3",
+  "skillID": "4",
+  "sessionTime": "2055",
+  "teamsMeetingLink": "https://testmeeting"
+}
+
 
 //*****************************************************
 //  DELETES

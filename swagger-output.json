@@ -830,6 +830,64 @@
             "OAuth2": ["read", "write"]
           }
         ]
+      },
+      "put": {
+        "tags": ["Sessions"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionID": {
+                  "example": "any"
+                },
+                "tutorID": {
+                  "example": "any"
+                },
+                "learnerID": {
+                  "example": "any"
+                },
+                "skillID": {
+                  "example": "any"
+                },
+                "sessionTime": {
+                  "example": "any"
+                },
+                "teamsMeetingLink": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "OAuth2": ["read", "write"]
+          }
+        ]
       }
     },
     "/feedback/": {

@@ -64,10 +64,41 @@ const getSessionById = async (req, res) => {
   }
 };
 
+/************************************************************************
+ *  UPDATE SESSION BY ID - HTTP:PUT
+ *************************************************************************/
+const updateSession = async (req, res) => {
+  // #swagger.tags = ['Sessions']
+  //#swagger.security = [{"OAuth2": ['read', 'write']}]
+
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Invalid ID');
+  }
+
+  const sessionId = new ObjectId(req.params.id);
+  console.log(req.params.id);
+
+  try {
+    const { sessionID, tutorID, learnerID, skillID, sessionTime, teamsMeetingLink } = req.body;
+    const sessionUpdate = await Session.findOneAndUpdate(
+      { _id: sessionId },
+      { sessionID, tutorID, learnerID, skillID, sessionTime, teamsMeetingLink },
+      { new: true }
+    );
+
+    if (!sessionUpdate) {
+      return res.status(404).json({ error: 'Session not found' });
+    }
+    res.sendStatus(204);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   getSessions,
   addSession,
-  getSessionById
-  //updateSession,
+  getSessionById,
+  updateSession
   //deleteSession,
 };
