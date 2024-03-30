@@ -11,7 +11,7 @@ const userProfileSchema = new mongoose.Schema({
       validator: (v) => {
         return /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/.test(v);
       },
-      message: (props) => `${props.value} is not a valide email address`
+      message: (props) => `${props.value} is not a valid email address`
     },
     required: true
   }

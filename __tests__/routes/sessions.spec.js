@@ -14,7 +14,7 @@ const mockSession = {
   teamsMeetingLink: 'https://example.com/meeting/1'
 };
 
-const mockSessions = [mockSession, { ...mockSession, sessionID: 2 }];
+const mockSessions = [mockSession, { ...mockSession, sessionID: 1 }];
 
 describe('sessions routes', () => {
   let app;

@@ -3,17 +3,23 @@
   "version": "1.0.0",
   "description": "For the final project, I think it might be interesting to create a community app for skill exchange app called \"SkillSwap\", somewhat like a barter system for learning and teaching. In this platform, I will create a profile detailing the skills I can offer, the ones I'm eager to learn, my availability, and my Microsoft Teams ID for remote sessions. The platform is built on the principle of equitable exchange, requiring me to teach a session before I can learn again, thereby ensuring a balance in the ratio of teaching to learning to maintain fairness among all users. The focus is on matching users based on shared learning interests and availability. A feedback mechanism after each session will help ensure the quality and reliability of the teaching sessions. With a strong emphasis on security and privacy, my personal information is safeguarded and only shared with confirmed matches.",
   "main": "server.js",
+
   "scripts": {
-    "test": "jest --coverage",
     "start": "cross-env NODE_ENV=production node server",
     "dev": "cross-env NODE_ENV=development nodemon server.js",
     "swagger": "node ./swagger.js",
     "lint": "eslint .",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "test": "jest"
   },
-  "keywords": [],
+  "keywords": ["jest", "jest prest"],
   "author": "",
   "license": "ISC",
+  "jest": {
+    "testEnvironment": "node",
+    "preset" : "@shelf/jest-mongodb",
+    "collectCoverage": true
+  },
   "dependencies": {
     "body-parser": "^1.20.2",
     "connect-mongo": "^5.1.0",
@@ -28,6 +34,7 @@
     "swagger-ui-express": "^5.0.0"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^4.2.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
