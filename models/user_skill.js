@@ -7,6 +7,7 @@ const userSkillSchema = new mongoose.Schema({
   skillLevel: {
     type: String,
     enum: ['beginner', 'intermediate', 'advanced'],
+    lowercase: true,
     required: true
   },
   isTeachable: { type: String, enum: ['y', 'n'], lowercase: true, required: true },
