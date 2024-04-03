@@ -5,8 +5,8 @@ const getProfile = (req, res) => {
                 'read'
             ]
     }] */
-  //res.send(JSON.stringify(req.oidc.user));
-  res.send('Hello from Profile Controller');
+  res.send(JSON.stringify(req.oidc.user));
 };
 
 module.exports = { getProfile };
+
