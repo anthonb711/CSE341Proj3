@@ -5,7 +5,7 @@ const getProfile = (req, res) => {
                 'read'
             ]
     }] */
-  res.send(JSON.stringify(req.oidc.user.name));
+  res.send(JSON.stringify(req.oidc.user));
 };
 
 module.exports = { getProfile };

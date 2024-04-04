@@ -3,7 +3,7 @@ const getHome = (req, res) => {
   // #swagger.produces = ['text/html']
 
   //res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-  res.send(`Heloo from Index Controller, User is ${(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out')}`);
+  res.send(`Heloo from Index Controller, ${JSON.stringify(req.oidc.user.name)} is ${(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out')}`);
 };
 
 module.exports = { getHome };
