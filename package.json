@@ -9,7 +9,7 @@
     "swagger": "node ./swagger.js",
     "lint": "eslint .",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "test": "jest"
+    "test": "jest "
   },
   "keywords": [
     "jest",
