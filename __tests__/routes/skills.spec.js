@@ -1,6 +1,6 @@
 const request = require('supertest');
 const express = require('express');
-const indexRoute = require('../../routes/index');
+const skillsRoute = require('../../routes/skills');
 const controller = require('../../controllers/skillsController');
 
 jest.mock('../../controllers/skillsController');
@@ -18,7 +18,7 @@ describe('Skills Routes', () => {
   beforeAll(() => {
     app = express();
     app.use(express.json());
-    app.use('/', indexRoute);
+    app.use('/skills', skillsRoute);
   });
 
   describe('GET /skills', () => {
