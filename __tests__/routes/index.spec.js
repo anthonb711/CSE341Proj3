@@ -1,3 +1,5 @@
+
+require('dotenv').config();
 const request = require('supertest');
 const express = require('express');
 const routes = require('../../routes/index.js');  
@@ -10,7 +12,7 @@ describe('Route integration tests', () => {
     it('should respond with the home page content', async () => {
       const response = await request(app).get('/');
       expect(response.statusCode).toBe(200);
-      expect(response.text).toContain('hello from Index Controller');
+      expect(response.text).toContain('Hello from Index Controller! User is Logged out');
     });
   });
 
@@ -18,7 +20,7 @@ describe('Route integration tests', () => {
     it('should handle the /profile route', async () => {
       const response = await request(app).get('/profile');
 
-      expect(response.statusCode).toBe(200);
+      expect(response.statusCode).toBe(302);
    
     });
   });
