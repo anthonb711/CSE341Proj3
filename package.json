@@ -9,19 +9,19 @@
     "swagger": "node ./swagger.js",
     "lint": "eslint .",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "test": "jest"
+    "test": "jest "
   },
   "keywords": [
-    "jest"
+    "jest",
+    "jest prest"
   ],
-  "jest": {
-    "collectCoverage": true,
-    "coverageReporters": [
-      "html"
-    ]
-  },
   "author": "",
   "license": "ISC",
+  "jest": {
+    "testEnvironment": "node",
+    "preset": "@shelf/jest-mongodb",
+    "collectCoverage": true
+  },
   "dependencies": {
     "body-parser": "^1.20.2",
     "connect-mongo": "^5.1.0",
@@ -36,6 +36,7 @@
     "swagger-ui-express": "^5.0.0"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^4.2.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
