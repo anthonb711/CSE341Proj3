@@ -28,10 +28,8 @@ describe('sessions routes', () => {
   it('GET / should call getSessions and return sessions', async () => {
     controller.getSessions.mockImplementation((req, res) => res.json(mockSessions));
 
-    const response = await request(app).get('/sessions');
-
-    expect(response.statusCode).toBe(200);
-    expect(response.body).toEqual(mockSessions);
+   const response = await request(app).get('/sessions');
+    expect(response.statusCode).toBe(200);expect(response.body).toEqual(mockSessions);
     expect(controller.getSessions).toHaveBeenCalled();
   });
 

@@ -1,8 +1,9 @@
+require('dotenv').config();
 const request = require('supertest');
 const express = require('express');
-const indexRoute = require('../../routes/index.js');
 const controller = require('../../controllers/availabilitiesController.js');
- 
+const availabilitiesRoute = require('../../routes/availabilities');
+
 jest.mock('../../controllers/availabilitiesController.js');
 
 
@@ -20,7 +21,7 @@ describe('Availabilities Routes', () => {
   beforeEach(() => {
     app = express();
     app.use(express.json());
-    app.use('/', indexRoute);
+    app.use('/availabilities', availabilitiesRoute);
     });
  
   it('GET / should call getAvailabilities controller method', async () => {

@@ -41,7 +41,6 @@ describe('user_profile routes', () => {
     );
 
     const response = await request(app).post('/user_profile').send(newUserProfile);
-    console.log(`MY CONSOLE LOG ${response.text}`);
     expect(response.statusCode).toBe(201);
     expect(response.text).toBe(newUserProfile.email.toString());
     expect(controller.addUserProfile).toHaveBeenCalled();
