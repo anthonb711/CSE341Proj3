@@ -1,7 +1,6 @@
 const routes = require('express').Router();
 const controller = require('../controllers/user_profileController');
 
-
 routes.get('/', controller.getUserProfiles);
 routes.post('/', controller.addUserProfile);
 

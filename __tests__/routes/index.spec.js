@@ -1,6 +1,6 @@
 const request = require('supertest');
 const express = require('express');
-const routes = require('../../routes/index.js');  
+const routes = require('../../routes/index.js');
 
 const app = express();
 app.use(routes);
@@ -19,9 +19,6 @@ describe('Route integration tests', () => {
       const response = await request(app).get('/profile');
 
       expect(response.statusCode).toBe(200);
-   
     });
   });
-
-
 });

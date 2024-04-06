@@ -1,7 +1,6 @@
 const routes = require('express').Router();
 const controller = require('../controllers/sessionsController');
 
-
 routes.get('/', controller.getSessions);
 routes.post('/', controller.addSession);
 

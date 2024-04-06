@@ -1,47 +1,12 @@
-const {MongoClient} = require('mongodb');
+const APP = require('../server');
 
-describe('insert', () => {
-  let connection;
-  let db;
-  let dbName = "SkillSwap";
+describe('Express has initlaized an instance of app', () => {
+  //test stuff
+  test('Event count should be 1', () => {
+    //Define inputs and expected output give said inputs
+    const input = 1;
 
-  beforeAll(async () => {
-    connection = await MongoClient.connect(globalThis.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    db = await connection.db(globalThis.dbName);
-  });
-
-  afterAll(async () => {
-    await connection.close();
-  });
-
-  it('should connect to SkillSwap', async () => {
-    expect(db).toEqual(dbName);
+    // The "expect() is the actual test"
+    expect(input).toEqual(APP._eventsCount);
   });
 });
-
-
-
-
-
-
-
-/*function sum(x, y){
-    return x + y;
-}
-
-describe("Sum Function", () => { 
-    //test stuff
-    test("it should add 1 & 2", ()=> {
-        
-        //Define inputs and expected output give said inputs
-        const input1 = 1;
-        const input2 = 2;
-        const output = 3;
-
-        // The "expect() is the actual test"
-        expect(sum(input1, input2)).toEqual(output);
-    });
-});*/
