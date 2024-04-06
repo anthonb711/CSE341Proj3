@@ -1,7 +1,6 @@
 const routes = require('express').Router();
 const controller = require('../controllers/availabilitiesController');
 
-
 routes.get('/', controller.getAvailabilities);
 routes.post('/', controller.addAvailabilities);
 

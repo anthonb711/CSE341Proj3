@@ -10,7 +10,7 @@ const mockSession = {
   tutorID: 101,
   learnerID: 201,
   skillID: 301,
-  sessionTime: new Date().toISOString(), 
+  sessionTime: new Date().toISOString(),
   teamsMeetingLink: 'https://example.com/meeting/1'
 };
 
@@ -37,7 +37,9 @@ describe('sessions routes', () => {
 
   it('POST / should call addSession and return session ID', async () => {
     const newSession = { ...mockSession, sessionID: 3 };
-    controller.addSession.mockImplementation((req, res) => res.status(201).send(newSession.sessionID.toString()));
+    controller.addSession.mockImplementation((req, res) =>
+      res.status(201).send(newSession.sessionID.toString())
+    );
 
     const response = await request(app).post('/sessions').send(newSession);
 
@@ -45,7 +47,4 @@ describe('sessions routes', () => {
     expect(response.text).toBe(newSession.sessionID.toString());
     expect(controller.addSession).toHaveBeenCalled();
   });
-
-  
 });
-

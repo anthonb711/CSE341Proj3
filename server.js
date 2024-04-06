@@ -7,7 +7,7 @@ const swaggerDoc = require('./swagger-output.json');
 const port = process.env.PORT || 3000;
 
 const app = express();
-
+console.log(app._eventsCount);
 // Middleware
 app
   .use(cors())
@@ -33,3 +33,5 @@ app.use('/', require('./routes'));
 connectDB();
 
 app.listen(port);
+
+module.exports = app;

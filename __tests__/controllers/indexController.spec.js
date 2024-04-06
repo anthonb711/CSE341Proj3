@@ -2,6 +2,8 @@ const { getHome } = require('../../controllers/indexController.js');
 
 describe('indexController', () => {
   describe('getHome', () => {
+
+
     it('should send the correct response when authenticated', () => {
       const req = {
         oidc: {
@@ -30,6 +32,7 @@ describe('indexController', () => {
           isAuthenticated: jest.fn().mockReturnValue(false)
         }
       };
+
 
       const res = {
         send: jest.fn()

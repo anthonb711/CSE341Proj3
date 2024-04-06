@@ -1,7 +1,6 @@
 const routes = require('express').Router();
 const controller = require('../controllers/skillsController');
 
-
 routes.get('/', controller.getSkills);
 routes.post('/', controller.addSkill);
 

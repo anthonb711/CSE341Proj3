@@ -1,10 +1,8 @@
 const { getSessions } = require('../../controllers/sessionsController.js');
 const Session = require('../../models/session.js');
 
- 
 jest.mock('../../models/session.js');
 
- 
 const mockSessions = [
   {
     sessionID: 1,

@@ -2,7 +2,7 @@
 require('dotenv').config();
 const request = require('supertest');
 const express = require('express');
-const routes = require('../../routes/index.js');  
+const routes = require('../../routes/index.js');
 
 const app = express();
 app.use(routes);
@@ -20,10 +20,10 @@ describe('Route integration tests', () => {
     it('should handle the /profile route', async () => {
       const response = await request(app).get('/profile');
 
+
       expect(response.statusCode).toBe(302);
    
+
     });
   });
-
-
 });
