@@ -1,6 +1,7 @@
 .env
 .vscode
 node_modules/
+coverage/
 *.txt
 .eslintrc
 .eslintignore
